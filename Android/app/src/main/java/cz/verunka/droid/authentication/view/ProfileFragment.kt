@@ -1,5 +1,7 @@
 package cz.verunka.droid.authentication.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +33,32 @@ class ProfileFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
+        binding.profileTextName.text = viewModel.user.name
+        binding.profileTextHometown.text = viewModel.user.hometown
+        binding.profileTextEmail.text = viewModel.user.email
+        binding.profileTextEmail.setOnClickListener {
+            val email = viewModel.user.email
+            openUrl("mailto:$email")
+        }
+
+        binding.profileTextGithubName.text = viewModel.user.gitHubName
+        binding.profileButtonGithub.setOnClickListener {
+            openUrl(viewModel.user.gitHubUrl)
+        }
+
+        binding.profileTextSteamName.text = viewModel.user.steamName
+        binding.profileButtonSteam.setOnClickListener {
+            openUrl(viewModel.user.steamUrl)
+        }
+
+        binding.profileTextLoremIpsum.text = viewModel.loremIpsum
+
         return binding.root
+    }
+
+    private fun openUrl(url: String) {
+        val openURL = Intent(Intent.ACTION_VIEW)
+        openURL.data = Uri.parse(url)
+        startActivity(openURL)
     }
 }

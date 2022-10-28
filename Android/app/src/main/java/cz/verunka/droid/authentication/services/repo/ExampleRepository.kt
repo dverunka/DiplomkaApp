@@ -1,9 +1,11 @@
 package cz.verunka.droid.authentication.services.repo
 
+import androidx.annotation.DrawableRes
+import cz.verunka.droid.authentication.R
 import cz.verunka.droid.authentication.model.Starship
 import cz.verunka.droid.authentication.model.User
 
-class ExampleRepository() {
+class ExampleRepository {
 
     private val _user: User = User(
         name = "Veronika",
@@ -25,13 +27,21 @@ class ExampleRepository() {
                 "We had a forced chamber explosion in the resonator coil. Field strength has increased by 3,000 percent. " +
                 "\n\nResistance is futile."
 
-    private val _fighters: List<String> =
-        listOf("tiefighter", "xwing", "falcon", "puddlejumper", "teltak", "dresselhaus", "starbug")
+    private val _fighters: List<Int> =
+        listOf(
+            R.drawable.tiefighter,
+            R.drawable.xwing,
+            R.drawable.falcon,
+            R.drawable.puddlejumper,
+            R.drawable.teltak,
+            R.drawable.dresselhaus,
+            R.drawable.starbug
+        )
 
     private val _starships: List<Starship> = listOf(
-        Starship("USS Enterprise", "NCC-1701 (Shuttlecraft)", 2245, "288.646 m", "enterprise"),
-        Starship("USS Sulaco", "8 UD-4L (Utility dropship)", 2122, "385 m", "sulaco"),
-        Starship("USS Daedalus", "BC-304 (Interstellar battlecruiser)", 2005, "195 m", "daedalus")
+        Starship("USS Enterprise", "NCC-1701 (Shuttlecraft)", "2245", "288.646 m", R.drawable.enterprise),
+        Starship("USS Sulaco", "8 UD-4L (Utility dropship)", "2122", "385 m", R.drawable.sulaco),
+        Starship("USS Daedalus", "BC-304 (Interstellar battlecruiser)", "2005", "195 m", R.drawable.daedalus)
     )
 
 
@@ -43,7 +53,7 @@ class ExampleRepository() {
         return this._loremIpsum
     }
 
-    fun getFighters(): List<String> {
+    fun getFighters(): List<Int> {
         return this._fighters
     }
 

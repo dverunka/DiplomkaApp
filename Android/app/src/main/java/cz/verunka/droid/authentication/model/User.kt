@@ -1,5 +1,7 @@
 package cz.verunka.droid.authentication.model
 
+import java.io.Serializable
+
 data class User(
     val name: String,
     val hometown: String,
@@ -9,4 +11,4 @@ data class User(
     val gitHubName: String,
     val steamUrl: String,
     val steamName: String
-) {}
+): Serializable

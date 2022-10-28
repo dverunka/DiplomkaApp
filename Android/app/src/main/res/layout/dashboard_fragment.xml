@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            tools:context=".view.DashboardFragment">
+            tools:context=".view.dashboard.DashboardFragment">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/dashboard_card_notification"
@@ -30,6 +30,7 @@
                 android:layout_marginTop="32dp"
                 app:cardBackgroundColor="@color/whiteSmoke"
                 app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -39,15 +40,16 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp">
 
-                    <ImageView
+                    <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/dashboard_image_notification"
-                        android:layout_width="64dp"
-                        android:layout_height="40dp"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/crew"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/Theme.DroidAuthentication.Image.Round"/>
 
                     <TextView
                         android:id="@+id/dashboard_text_notification_title"
@@ -55,6 +57,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:text="@string/notification"
+                        android:textColor="@color/primaryColor"
+                        android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/dashboard_image_notification"
                         app:layout_constraintTop_toTopOf="parent"/>
@@ -66,6 +70,7 @@
                         android:layout_marginStart="16dp"
                         android:singleLine="false"
                         android:text="@string/notification_text"
+                        android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/dashboard_image_notification"
@@ -82,16 +87,19 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/fighters"
+                android:textColor="@color/primaryColor"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dashboard_card_notification"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dashboard_recycler_fighters"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dashboard_text_fighters_title"
@@ -105,17 +113,19 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/starships"
+                android:textColor="@color/primaryColor"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dashboard_recycler_fighters"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dashboard_recycler_starships"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="32dp"
-                android:orientation="horizontal"
+                android:layout_marginBottom="80dp"
+                android:paddingHorizontal="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

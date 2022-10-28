@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/dashboard_destination"
-        android:name="cz.verunka.droid.authentication.view.DashboardFragment"
+        android:name="cz.verunka.droid.authentication.view.dashboard.DashboardFragment"
         tools:layout="@layout/dashboard_fragment"/>
 
     <fragment
