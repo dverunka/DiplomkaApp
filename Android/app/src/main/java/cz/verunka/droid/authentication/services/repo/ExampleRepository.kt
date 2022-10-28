@@ -3,7 +3,7 @@ package cz.verunka.droid.authentication.services.repo
 import cz.verunka.droid.authentication.model.Starship
 import cz.verunka.droid.authentication.model.User
 
-class ExampleRepository : IExampleRepository {
+class ExampleRepository() {
 
     private val _user: User = User(
         name = "Veronika",
@@ -23,7 +23,8 @@ class ExampleRepository : IExampleRepository {
                 "We had a forced chamber explosion in the resonator coil. Field strength has increased by 3,000 percent. " +
                 "\n\nResistance is futile."
 
-    private val _fighters: List<String> = listOf("tiefighter", "xwing", "falcon", "puddlejumper", "teltak", "dresselhaus", "starbug")
+    private val _fighters: List<String> =
+        listOf("tiefighter", "xwing", "falcon", "puddlejumper", "teltak", "dresselhaus", "starbug")
 
     private val _starships: List<Starship> = listOf(
         Starship("USS Enterprise", "NCC-1701 (Shuttlecraft)", 2245, "288.646 m", "enterprise"),
@@ -31,19 +32,20 @@ class ExampleRepository : IExampleRepository {
         Starship("USS Daedalus", "BC-304 (Interstellar battlecruiser)", 2005, "195 m", "daedalus")
     )
 
-    override suspend fun getUser(): User {
+
+    fun getUser(): User {
         return this._user
     }
 
-    override suspend fun getLoremIpsum(): String {
+    fun getLoremIpsum(): String {
         return this._loremIpsum
     }
 
-    override suspend fun getFighters(): List<String> {
+    fun getFighters(): List<String> {
         return this._fighters
     }
 
-    override suspend fun getStarships(): List<Starship> {
+    fun getStarships(): List<Starship> {
         return this._starships
     }
 }

@@ -11,10 +11,6 @@ import cz.verunka.droid.authentication.viewModel.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
-
     private lateinit var viewModel: ProfileViewModel
 
     override fun onCreateView(
@@ -22,5 +18,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return inflater.inflate(R.layout.dashboard_fragment, container, false)
+    }
+
+    companion object {
+        fun newInstance() = ProfileFragment()
     }
 }

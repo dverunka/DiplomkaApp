@@ -36,7 +36,7 @@
 				<CollectionView Grid.Row="2" ItemsSource="{Binding Fighters}"
 					Margin="16, 16, 0, 0" HeightRequest="112"
 					HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
-					Footer="{OnPlatform Android='', iOS='iOS:Fighters'}">
+					Footer="{OnPlatform Android='', iOS='iOS:'}">
 
 					<CollectionView.ItemsLayout>
 						<LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
