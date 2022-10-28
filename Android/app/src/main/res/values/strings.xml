@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Diplomka</string>
+    <string name="log_in">Log In</string>
+    <string name="dashboard_view">Dashboard</string>
+    <string name="profile_view">Profile</string>
+    <string name="bio">Bio</string>
+    <string name="github">GitHub</string>
+    <string name="steam">STEAM</string>
+    <string name="notification">Notification</string>
+    <string name="notification_text">You are invited to Kryten birthday party! Please RVSP.</string>
+    <string name="fighters">Fighters</string>
+    <string name="starships">Starships</string>
+</resources>
