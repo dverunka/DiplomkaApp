@@ -4,23 +4,33 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import cz.verunka.droid.authentication.R
-import cz.verunka.droid.authentication.viewModel.MainViewModel
+import cz.verunka.droid.authentication.databinding.ProfileFragmentBinding
 import cz.verunka.droid.authentication.viewModel.ProfileViewModel
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var viewModel: ProfileViewModel
+    private val viewModel: ProfileViewModel by lazy {
+        ViewModelProvider(this)[ProfileViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.dashboard_fragment, container, false)
-    }
+        val binding: ProfileFragmentBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.profile_fragment,
+            container,
+            false
+        )
 
-    companion object {
-        fun newInstance() = ProfileFragment()
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+
+        return binding.root
     }
 }

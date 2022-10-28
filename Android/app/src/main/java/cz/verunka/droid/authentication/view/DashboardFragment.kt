@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import cz.verunka.droid.authentication.R
+import cz.verunka.droid.authentication.databinding.DashboardFragmentBinding
+import cz.verunka.droid.authentication.databinding.MainFragmentBinding
 import cz.verunka.droid.authentication.viewModel.DashboardViewModel
 import cz.verunka.droid.authentication.viewModel.MainViewModel
 
@@ -21,10 +24,16 @@ class DashboardFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.dashboard_fragment, container, false)
-    }
+        val binding: DashboardFragmentBinding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.dashboard_fragment,
+            container,
+            false
+        )
 
-    companion object {
-        fun newInstance() = DashboardFragment()
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+
+        return binding.root
     }
 }

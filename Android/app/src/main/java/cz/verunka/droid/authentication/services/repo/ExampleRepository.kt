@@ -11,7 +11,9 @@ class ExampleRepository() {
         email = "v1_dzurikova@utb.cz",
         photo = "R.drawable.girl",
         gitHubUrl = "https://github.com/lightsaberka",
-        steamUrl = "https://store.steampowered.com/app/743360/Haste_Heist/"
+        gitHubName = "lightsaberka",
+        steamUrl = "https://store.steampowered.com/app/743360/Haste_Heist/",
+        steamName = "Haste Heist"
     )
 
     private val _loremIpsum: String =

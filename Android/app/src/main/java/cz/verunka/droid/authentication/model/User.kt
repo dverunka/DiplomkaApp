@@ -6,5 +6,7 @@ data class User(
     val email: String,
     val photo: String,
     val gitHubUrl: String,
-    val steamUrl: String
+    val gitHubName: String,
+    val steamUrl: String,
+    val steamName: String
 ) {}
