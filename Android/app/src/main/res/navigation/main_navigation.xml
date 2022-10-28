@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/log_in_destination">
+
+    <fragment
+        android:id="@+id/log_in_destination"
+        android:name="cz.verunka.droid.authentication.view.MainFragment"
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/action_enter_application"
+            app:destination="@id/tabs_root_destination"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tabs_root_destination"
+        android:name="cz.verunka.droid.authentication.view.TabsRootFragment"
+        tools:layout="@layout/tabs_root_fragment">
+
+        <action
+            android:id="@+id/action_open_dashboard"
+            app:destination="@id/dashboard_destination"/>
+
+        <action
+            android:id="@+id/action_open_profile"
+            app:destination="@id/profile_destination"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboard_destination"
+        android:name="cz.verunka.droid.authentication.view.DashboardFragment"
+        tools:layout="@layout/dashboard_fragment"/>
+
+    <fragment
+        android:id="@+id/profile_destination"
+        android:name="cz.verunka.droid.authentication.view.ProfileFragment"
+        tools:layout="@layout/profile_fragment"/>
+
+</navigation>
