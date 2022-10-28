@@ -3,17 +3,25 @@ package cz.verunka.droid.authentication.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cz.verunka.droid.authentication.model.User
+import cz.verunka.droid.authentication.services.repo.ExampleRepository
 
 class ProfileViewModel() : ViewModel() {
 
-    private val _user = MutableLiveData<User>()
-    private val _loremIpsum = MutableLiveData<String>()
+    private val repo = ExampleRepository()
 
-    fun getUser() {
-        //this._user.value = repo.getUser()
+    lateinit var user: User
+    lateinit var loremIpsum: String
+
+    init {
+        getUser()
+        getLoremIpsum()
     }
 
-    fun getLoremIpsum() {
-        //this._loremIpsum.value = repo.getLoremIpsum()
+    private fun getUser() {
+        this.user = repo.getUser()
+    }
+
+    private fun getLoremIpsum() {
+        this.loremIpsum = repo.getLoremIpsum()
     }
 }

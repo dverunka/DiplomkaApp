@@ -3,17 +3,25 @@ package cz.verunka.droid.authentication.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cz.verunka.droid.authentication.model.Starship
+import cz.verunka.droid.authentication.services.repo.ExampleRepository
 
 class DashboardViewModel : ViewModel() {
 
-    private val _fighters = MutableLiveData<List<String>>()
-    private val _starships = MutableLiveData<List<Starship>>()
+    private val repo = ExampleRepository()
 
-    fun getFighters() {
-        //this._fighters.value = repo.getFighters()
+    lateinit var fighters: List<Int>
+    lateinit var starships: List<Starship>
+
+    init {
+        getFighters()
+        getStarships()
     }
 
-    fun getStarships() {
-        //this._starships.value = repo.getStarships()
+    private fun getFighters() {
+        this.fighters = repo.getFighters()
+    }
+
+    private fun getStarships() {
+        this.starships = repo.getStarships()
     }
 }

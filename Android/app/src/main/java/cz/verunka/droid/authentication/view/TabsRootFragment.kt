@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import cz.verunka.droid.authentication.R
 import cz.verunka.droid.authentication.databinding.TabsRootFragmentBinding
+import cz.verunka.droid.authentication.view.dashboard.DashboardFragment
 
 class TabsRootFragment : Fragment() {
 

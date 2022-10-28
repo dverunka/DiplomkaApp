@@ -39,6 +39,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -58,6 +60,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:textColor="@color/primaryColor"
                     app:layout_constraintBottom_toBottomOf="@id/profile_icon_hometown"
                     app:layout_constraintEnd_toEndOf="@id/profile_text_name"
                     app:layout_constraintStart_toEndOf="@id/profile_icon_hometown"
@@ -78,6 +81,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:autoLink="email"
+                    android:clickable="true"
+                    android:textColorLink="@color/primaryColor"
                     app:layout_constraintBottom_toBottomOf="@id/profile_icon_email"
                     app:layout_constraintEnd_toEndOf="@id/profile_text_name"
                     app:layout_constraintStart_toEndOf="@id/profile_icon_email"
@@ -93,6 +99,7 @@
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toStartOf="@id/profile_button_steam"
                     app:layout_constraintStart_toStartOf="@id/profile_text_name"
                     app:layout_constraintTop_toBottomOf="@id/profile_icon_email">
@@ -109,13 +116,15 @@
                             android:id="@+id/profile_text_github_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/primaryColor"
                             tools:text="GitHub Name"/>
 
                         <TextView
                             android:id="@+id/profile_text_github"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/github"/>
+                            android:text="@string/github"
+                            android:textColor="@color/primaryColor"/>
 
                     </LinearLayout>
 
@@ -130,6 +139,7 @@
                     android:clickable="true"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="@id/profile_text_name"
                     app:layout_constraintStart_toEndOf="@id/profile_button_github"
                     app:layout_constraintTop_toBottomOf="@id/profile_icon_email">
@@ -143,16 +153,18 @@
                         android:padding="8dp">
 
                         <TextView
-                            android:id="@+id/progile_text_steam_name"
+                            android:id="@+id/profile_text_steam_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/primaryColor"
                             tools:text="STEAM Game"/>
 
                         <TextView
                             android:id="@+id/profile_text_steam"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/steam"/>
+                            android:text="@string/steam"
+                            android:textColor="@color/primaryColor"/>
 
                     </LinearLayout>
 
@@ -164,6 +176,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:text="@string/bio"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="@id/profile_text_name"
                     app:layout_constraintStart_toStartOf="@id/profile_text_name"
                     app:layout_constraintTop_toBottomOf="@id/profile_button_steam"/>
@@ -173,7 +187,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
-                    android:layout_marginBottom="32dp"
+                    android:layout_marginBottom="80dp"
+                    android:textColor="@color/primaryColor"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/profile_text_name"
                     app:layout_constraintStart_toStartOf="@id/profile_text_name"
@@ -186,7 +201,8 @@
                 android:id="@+id/profile_image_girl"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginEnd="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
                 android:src="@drawable/girl"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
