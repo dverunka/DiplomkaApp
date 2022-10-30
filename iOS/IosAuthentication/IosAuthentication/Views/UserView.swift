@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct UserView: View {
     
-    @ObservedObject var viewModel: ProfileViewModel
+    @ObservedObject var viewModel: UserViewModel
     
     var body: some View {
         
@@ -17,11 +17,15 @@ struct ProfileView: View {
             VStack(spacing: 0) {
                 
                 HStack {
+                    Spacer()
                     // Profile image.
+                    // todo: image position
                     Image("girl")
                         .resizable()
                         .scaledToFit()
                         .frame(width: .infinity, height: 180, alignment: .trailing)
+                    Spacer()
+                        .frame(width: 32, height: 0, alignment: .trailing)
                 }
                 .padding(.top, 32)
                 
@@ -62,6 +66,9 @@ struct ProfileView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .font(.system(size: 14, weight: .regular))
                         }
+                        .onTapGesture {
+                            viewModel.openEmail(viewModel.user.email)
+                        }
                     }
                     
                     
@@ -83,6 +90,9 @@ struct ProfileView: View {
                         .padding(.all, 8)
                         .background(Color.white)
                         .cornerRadius(16)
+                        .onTapGesture {
+                            viewModel.openUrl(viewModel.user.gitHubUrl.url)
+                        }
                         
                         // STEAM.
                         VStack(spacing: 4) {
@@ -99,6 +109,9 @@ struct ProfileView: View {
                         .padding(.all, 8)
                         .background(Color.white)
                         .cornerRadius(16)
+                        .onTapGesture {
+                            viewModel.openUrl(viewModel.user.steamUrl.url)
+                        }
                     }
                     
                     // Bio and Lirem ipsum.
@@ -116,29 +129,20 @@ struct ProfileView: View {
                 .padding([.leading, .trailing], 16)
                 .padding([.top, .bottom], 32)
                 .background(Colors.whiteSmoke)
-                //.cornerRadius(10, corners: [.topLeft, .topRight])
+                // todo: .cornerRadius(10, corners: [.topLeft, .topRight])
             }
         }
     }
     
-    init(viewModel: ProfileViewModel) {
-        
+    init(viewModel: UserViewModel) {
         self.viewModel = viewModel
-        
-        // Set background color for toolbar for all states.
-        let coloredAppearance = UINavigationBarAppearance()
-            coloredAppearance.configureWithTransparentBackground()
-            coloredAppearance.backgroundColor = UIColor(Colors.whiteSmoke)
-
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ProfileView(viewModel: .init(dataService: ExampleDataServiceImpl()))
+        UserView(viewModel: .init(dataService: ExampleDataServiceImpl()))
+            .previewInterfaceOrientation(.portrait)
     }
 }

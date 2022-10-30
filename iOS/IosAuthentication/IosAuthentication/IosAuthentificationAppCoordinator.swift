@@ -6,43 +6,78 @@
 //
 
 import SwiftUI
+import LocalAuthentication
 
 final class IosAuthentificationAppCoordinator {
     
-    let loginView: HomeView<TabbarView>
-    
-    let loginViewViewModel: HomeViewModel<TabbarView>
-    
     private let dataService: ExampleDataService
-    private let dashboardViewModel: DashboardViewModel
-    private let profileViewModel: ProfileViewModel
     
     private let tabbarViewFactory: TabbarViewFactory
+    
+    private let homeViewModel: HomeViewModel<TabbarView>
+    private let dashboardViewModel: DashboardViewModel
+    private let userViewModel: UserViewModel
+    
+    let homeView: HomeView<TabbarView>
+    
     init() {
         
         let dataService =  ExampleDataServiceImpl()
         self.dataService = dataService
         
-        profileViewModel = .init(dataService: dataService)
+        userViewModel = .init(dataService: dataService)
         dashboardViewModel = .init(dataService: dataService)
         
-        tabbarViewFactory = TabbarViewFactory(dashboardViewModel: dashboardViewModel, profileViewModel: profileViewModel)
+        tabbarViewFactory = TabbarViewFactory(dashboardViewModel: dashboardViewModel, profileViewModel: userViewModel)
         
-        loginViewViewModel = HomeViewModel(destinationViewAfterAuthentification: tabbarViewFactory.makeTabbarView)
+        homeViewModel = HomeViewModel(destinationViewAfterAuthentification: tabbarViewFactory.makeTabbarView)
         
-        loginView = HomeView(viewModel: loginViewViewModel)
-        loginViewViewModel.delegate = self
+        homeView = HomeView(viewModel: homeViewModel)
+        
+        homeViewModel.delegate = self
+        userViewModel.delegate = self
     }
 }
 
 extension IosAuthentificationAppCoordinator: HomeViewModelDelegate {
     
-    func requestedAuthentication() {
-        
-        // Call Authentication here and depending on the result, set the Bool below to true, if it succeeded
-        
-        loginViewViewModel.authentificationWasSuccessful = true
+    func requestAuthentication() {
+        let localAuthenticationContext = LAContext()
+        localAuthenticationContext.localizedFallbackTitle = "Use passcode"
+
+        var authError: NSError?
+        let reasonString = "We need Your biometric information for authentication."
+
+        if localAuthenticationContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &authError) {
+            localAuthenticationContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reasonString) { [weak self] success, evaluateError in
+                
+                if success {
+                    self?.homeViewModel.wasAuthenticated = true
+                } else {
+                    guard let error = evaluateError else {
+                        return
+                    }
+                    print("Biometric authentication not enabled: \(error._code), \(error.localizedDescription)")
+                }
+            }
+        } else {
+            guard let error = authError else {
+                return
+            }
+            print("Biometric authentication failed: \(error._code), \(error.localizedDescription)")
+        }
     }
 }
 
-
+extension IosAuthentificationAppCoordinator: UserViewModelDelegate {
+        
+    func openEmail(_ email: String) {
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func openUrl(_ url: URL) {
+        UIApplication.shared.open(url)
+    }
+}

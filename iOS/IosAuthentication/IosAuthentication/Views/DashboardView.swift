@@ -66,7 +66,7 @@ struct DashboardView: View {
                     .font(.system(size: 24, weight: .regular))
                 
                 // Starship list.
-                // TabView(selection: $starshipIndex)
+                // todo: TabView(selection: $starshipIndex) + expand for whole screen width
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         
@@ -78,7 +78,7 @@ struct DashboardView: View {
                                 Image(starship.photo)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: .infinity, height: 160)
+                                    .frame(width: 340, height: 160)
                                     .clipped()
                                 
                                 VStack(spacing: 4) {
@@ -86,7 +86,7 @@ struct DashboardView: View {
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .font(.system(size: 24, weight: .regular))
                                     
-                                    Text("Starship type")
+                                    Text(String(starship.type))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .font(.system(size: 14, weight: .regular))
                                 }
@@ -104,31 +104,19 @@ struct DashboardView: View {
                                         .foregroundColor(Colors.dimGray)
                                 }
                                 .padding(.all, 8)
-                                
                             }
                             .background(Colors.whiteSmoke)
                             .cornerRadius(16)
                         }
                     }
                 }
-                
             }
             .padding(.all, 16)
         }
     }
     
     init(viewModel: DashboardViewModel) {
-        
         self.viewModel = viewModel
-        
-        // Set background color for toolbar for all states.
-        let coloredAppearance = UINavigationBarAppearance()
-            coloredAppearance.configureWithTransparentBackground()
-            coloredAppearance.backgroundColor = UIColor(Colors.whiteSmoke)
-
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
 }
 

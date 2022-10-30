@@ -8,18 +8,19 @@
 import Foundation
 
 class TabbarViewFactory {
-    private let dashboardViewModel: DashboardViewModel
-    private let profileViewModel: ProfileViewModel
     
-    init(dashboardViewModel: DashboardViewModel, profileViewModel: ProfileViewModel) {
+    private let dashboardViewModel: DashboardViewModel
+    private let userViewModel: UserViewModel
+    
+    init(dashboardViewModel: DashboardViewModel, profileViewModel: UserViewModel) {
         self.dashboardViewModel = dashboardViewModel
-        self.profileViewModel = profileViewModel
+        self.userViewModel = profileViewModel
     }
     
     func makeTabbarView() -> TabbarView {
         TabbarView(
             dashboardView: DashboardView(viewModel: dashboardViewModel),
-            profileView: ProfileView(viewModel: profileViewModel)
+            userView: UserView(viewModel: userViewModel)
         )
     }
 }

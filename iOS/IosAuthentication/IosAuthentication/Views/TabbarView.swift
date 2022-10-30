@@ -11,35 +11,44 @@ import SwiftUI
 struct TabbarView: View {
     
     private let dashboardView: DashboardView
-    private let profileView: ProfileView
-    
+    private let userView: UserView
+        
     var body: some View {
         
         TabView {
             dashboardView
                 .tabItem {
-                    Image(systemName: "house.fill")
+                    Image("home").renderingMode(.template)
                     Text(Strings.dashboardView.rawValue)
                 }
             
-            profileView
+            userView
                 .tabItem {
-                    Image(systemName: "person.fill")
+                    Image("person").renderingMode(.template)
                     Text(Strings.profileView.rawValue)
                 }
         }
         .navigationBarBackButtonHidden(true)
         .navigationTitle(Text(Strings.appName.rawValue))
         .navigationBarTitleDisplayMode(.inline)
+        
     }
     
-    init(dashboardView: DashboardView, profileView: ProfileView) {
+    init(dashboardView: DashboardView, userView: UserView) {
         
         self.dashboardView = dashboardView
-        self.profileView = profileView
+        self.userView = userView
+        
+        // Set background color for toolbar for all states.
+        let coloredAppearance = UINavigationBarAppearance()
+            coloredAppearance.configureWithTransparentBackground()
+            coloredAppearance.backgroundColor = UIColor(Colors.whiteSmoke)
+
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
 }
-
 
 struct TabbarView_Previews: PreviewProvider {
     
@@ -47,7 +56,7 @@ struct TabbarView_Previews: PreviewProvider {
         
         TabbarView(
             dashboardView: DashboardView(viewModel: .init(dataService: ExampleDataServiceImpl())),
-            profileView: ProfileView(viewModel: .init(dataService: ExampleDataServiceImpl()))
+            userView: UserView(viewModel: .init(dataService: ExampleDataServiceImpl()))
         )
     }
 }

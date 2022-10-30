@@ -9,14 +9,14 @@ import SwiftUI
 
 protocol HomeViewModelDelegate: AnyObject {
     
-    func requestedAuthentication()
+    func requestAuthentication()
 }
 
 class HomeViewModel<DestinationView: View>: ObservableObject {
     
     weak var delegate: HomeViewModelDelegate?
     
-    @Published var authentificationWasSuccessful = false
+    @Published var wasAuthenticated = false
     
     let destinationViewAfterAuthentification: () -> DestinationView
     
@@ -25,6 +25,6 @@ class HomeViewModel<DestinationView: View>: ObservableObject {
     }
     
     func authenticate() {
-        delegate?.requestedAuthentication()
+        delegate?.requestAuthentication()
     }
 }
