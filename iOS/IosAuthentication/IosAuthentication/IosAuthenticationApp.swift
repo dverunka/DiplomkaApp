@@ -14,7 +14,7 @@ struct IosAuthenticationApp: App {
     
     var body: some Scene {
         WindowGroup {
-            mainCoordinator.loginView
+            mainCoordinator.homeView
         }
     }
 }

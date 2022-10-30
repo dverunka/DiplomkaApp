@@ -14,15 +14,15 @@
 		9438B628281ED5C8004EAE12 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B627281ED5C8004EAE12 /* Starship.swift */; };
 		9438B62A281ED5ED004EAE12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B629281ED5ED004EAE12 /* User.swift */; };
 		9438B62D281ED609004EAE12 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B62C281ED609004EAE12 /* DashboardViewModel.swift */; };
-		9438B62F281ED629004EAE12 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B62E281ED629004EAE12 /* UserViewModel.swift */; };
 		9438B632281EF244004EAE12 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B631281EF244004EAE12 /* Strings.swift */; };
 		9438B634281EFB6D004EAE12 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B633281EFB6D004EAE12 /* HomeViewModel.swift */; };
 		9438B638281EFF43004EAE12 /* ExampleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B637281EFF43004EAE12 /* ExampleDataService.swift */; };
 		9438B63A281EFF5C004EAE12 /* ExampleDataServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B639281EFF5C004EAE12 /* ExampleDataServiceImpl.swift */; };
 		9438B63C281F0729004EAE12 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B63B281F0729004EAE12 /* DashboardView.swift */; };
-		9438B63E281F074B004EAE12 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B63D281F074B004EAE12 /* ProfileView.swift */; };
+		9438B63E281F074B004EAE12 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B63D281F074B004EAE12 /* UserView.swift */; };
 		9438B640281F0F81004EAE12 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438B63F281F0F81004EAE12 /* Colors.swift */; };
-		94795FF0282061770070DE26 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94795FEF282061770070DE26 /* ProfileViewModel.swift */; };
+		9440DE552827FA3800B46070 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9440DE532827F73600B46070 /* LocalAuthentication.framework */; };
+		94795FF0282061770070DE26 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94795FEF282061770070DE26 /* UserViewModel.swift */; };
 		F464D227281FDC3D0009F503 /* IosAuthentificationAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464D226281FDC3D0009F503 /* IosAuthentificationAppCoordinator.swift */; };
 		F464D22A281FDEB50009F503 /* String+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464D229281FDEB50009F503 /* String+Identifiable.swift */; };
 		F464D22C281FFEF30009F503 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F464D22B281FFEF30009F503 /* TabbarView.swift */; };
@@ -38,15 +38,16 @@
 		9438B627281ED5C8004EAE12 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		9438B629281ED5ED004EAE12 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9438B62C281ED609004EAE12 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		9438B62E281ED629004EAE12 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9438B631281EF244004EAE12 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		9438B633281EFB6D004EAE12 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9438B637281EFF43004EAE12 /* ExampleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataService.swift; sourceTree = "<group>"; };
 		9438B639281EFF5C004EAE12 /* ExampleDataServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDataServiceImpl.swift; sourceTree = "<group>"; };
 		9438B63B281F0729004EAE12 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
-		9438B63D281F074B004EAE12 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9438B63D281F074B004EAE12 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		9438B63F281F0F81004EAE12 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		94795FEF282061770070DE26 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9440DE532827F73600B46070 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		9440DE582827FAFC00B46070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		94795FEF282061770070DE26 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F464D226281FDC3D0009F503 /* IosAuthentificationAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAuthentificationAppCoordinator.swift; sourceTree = "<group>"; };
 		F464D229281FDEB50009F503 /* String+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Identifiable.swift"; sourceTree = "<group>"; };
 		F464D22B281FFEF30009F503 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9440DE552827FA3800B46070 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +71,7 @@
 			children = (
 				9438B617281ED289004EAE12 /* IosAuthentication */,
 				9438B616281ED289004EAE12 /* Products */,
+				9440DE522827F73600B46070 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +86,7 @@
 		9438B617281ED289004EAE12 /* IosAuthentication */ = {
 			isa = PBXGroup;
 			children = (
+				9440DE582827FAFC00B46070 /* Info.plist */,
 				9438B618281ED289004EAE12 /* IosAuthenticationApp.swift */,
 				9438B635281EFEC1004EAE12 /* Services */,
 				9438B626281ED5A8004EAE12 /* Models */,
@@ -91,7 +95,6 @@
 				94795FF12820625A0070DE26 /* Resources */,
 				F464D228281FDEA80009F503 /* Tools */,
 				F464D226281FDC3D0009F503 /* IosAuthentificationAppCoordinator.swift */,
-				F47802C328229DCB00AEBFB1 /* TabBarViewFactory.swift */,
 				9438B61E281ED28B004EAE12 /* Preview Content */,
 			);
 			path = IosAuthentication;
@@ -118,9 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				9438B62C281ED609004EAE12 /* DashboardViewModel.swift */,
-				9438B62E281ED629004EAE12 /* UserViewModel.swift */,
 				9438B633281EFB6D004EAE12 /* HomeViewModel.swift */,
-				94795FEF282061770070DE26 /* ProfileViewModel.swift */,
+				94795FEF282061770070DE26 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -130,8 +132,9 @@
 			children = (
 				9438B61A281ED289004EAE12 /* HomeView.swift */,
 				9438B63B281F0729004EAE12 /* DashboardView.swift */,
-				9438B63D281F074B004EAE12 /* ProfileView.swift */,
+				9438B63D281F074B004EAE12 /* UserView.swift */,
 				F464D22B281FFEF30009F503 /* TabbarView.swift */,
+				F47802C328229DCB00AEBFB1 /* TabBarViewFactory.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +154,14 @@
 				9438B639281EFF5C004EAE12 /* ExampleDataServiceImpl.swift */,
 			);
 			path = DataService;
+			sourceTree = "<group>";
+		};
+		9440DE522827F73600B46070 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9440DE532827F73600B46070 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		94795FF12820625A0070DE26 /* Resources */ = {
@@ -242,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9438B62A281ED5ED004EAE12 /* User.swift in Sources */,
-				9438B62F281ED629004EAE12 /* UserViewModel.swift in Sources */,
 				F464D22C281FFEF30009F503 /* TabbarView.swift in Sources */,
 				9438B638281EFF43004EAE12 /* ExampleDataService.swift in Sources */,
 				9438B62D281ED609004EAE12 /* DashboardViewModel.swift in Sources */,
@@ -250,12 +260,12 @@
 				9438B628281ED5C8004EAE12 /* Starship.swift in Sources */,
 				9438B63C281F0729004EAE12 /* DashboardView.swift in Sources */,
 				F464D22A281FDEB50009F503 /* String+Identifiable.swift in Sources */,
-				9438B63E281F074B004EAE12 /* ProfileView.swift in Sources */,
+				9438B63E281F074B004EAE12 /* UserView.swift in Sources */,
 				9438B640281F0F81004EAE12 /* Colors.swift in Sources */,
 				9438B63A281EFF5C004EAE12 /* ExampleDataServiceImpl.swift in Sources */,
 				9438B61B281ED289004EAE12 /* HomeView.swift in Sources */,
 				F47802C428229DCB00AEBFB1 /* TabBarViewFactory.swift in Sources */,
-				94795FF0282061770070DE26 /* ProfileViewModel.swift in Sources */,
+				94795FF0282061770070DE26 /* UserViewModel.swift in Sources */,
 				F464D227281FDC3D0009F503 /* IosAuthentificationAppCoordinator.swift in Sources */,
 				9438B619281ED289004EAE12 /* IosAuthenticationApp.swift in Sources */,
 				9438B632281EF244004EAE12 /* Strings.swift in Sources */,
@@ -390,6 +400,7 @@
 				DEVELOPMENT_TEAM = Q76DPH6L2H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosAuthentication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -419,6 +430,7 @@
 				DEVELOPMENT_TEAM = Q76DPH6L2H;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IosAuthentication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

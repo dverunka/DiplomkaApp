@@ -19,3 +19,9 @@ struct User {
     let steamGameName: String
     let steamUrl: String
 }
+
+extension String {
+    var url: URL? {
+        URL(string: self)
+    }
+}

@@ -26,7 +26,7 @@ struct HomeView<DestinationView: View>: View {
                 .cornerRadius(16)
                 
                 NavigationLink(
-                    isActive: $viewModel.authentificationWasSuccessful,
+                    isActive: $viewModel.wasAuthenticated,
                     destination: viewModel.destinationViewAfterAuthentification
                 ) { EmptyView().hidden() }
             }
@@ -47,7 +47,6 @@ struct HomeView<DestinationView: View>: View {
 struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel<EmptyView>(destinationViewAfterAuthentification: { EmptyView() }))
+        HomeView(viewModel: HomeViewModel<EmptyView>(destinationViewAfterAuthentification: {EmptyView()}))
     }
 }
-
