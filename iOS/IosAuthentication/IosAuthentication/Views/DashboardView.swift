@@ -14,7 +14,6 @@ struct DashboardView: View {
     var body: some View {
         
         ScrollView {
-            
             VStack(spacing: 16) {
                 
                 // Notification.
@@ -72,6 +71,7 @@ struct DashboardView: View {
                     HStack {
                         
                         ForEach(viewModel.starships) { starship in
+                            
                             // Starship card view.
                             VStack(spacing: 8) {
                                 
@@ -113,17 +113,27 @@ struct DashboardView: View {
                 }
                 
             }
+            .padding(.all, 16)
         }
-        .padding([.top, .bottom], 32)
-        .padding([.leading, .trailing], 16)
     }
     
     init(viewModel: DashboardViewModel) {
+        
         self.viewModel = viewModel
+        
+        // Set background color for toolbar for all states.
+        let coloredAppearance = UINavigationBarAppearance()
+            coloredAppearance.configureWithTransparentBackground()
+            coloredAppearance.backgroundColor = UIColor(Colors.whiteSmoke)
+
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
     }
 }
 
 struct DashboardView_Previews: PreviewProvider {
+    
     static var previews: some View {
         DashboardView(viewModel: .init(dataService: ExampleDataServiceImpl()))
     }

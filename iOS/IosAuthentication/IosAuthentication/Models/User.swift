@@ -14,6 +14,8 @@ struct User {
     let hometown: String
     let email: String
     let photo: String
+    let gitHubUsername: String
     let gitHubUrl: String
+    let steamGameName: String
     let steamUrl: String
 }

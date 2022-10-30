@@ -7,33 +7,47 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeView<DestinationView: View>: View {
     
-    @ObservedObject private var viewModel: HomeViewModel
-    
+    @ObservedObject private var viewModel: HomeViewModel<DestinationView>
+        
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Button(Strings.logIn.rawValue, action: viewModel.authenticate)
-            .frame(maxWidth: .infinity, alignment: .center)
+        
+        NavigationView {
+                                    
+            VStack {
+                Spacer()
+                
+                Button(Strings.logIn.rawValue, action: viewModel.authenticate)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.all, 16)
+                .background(Colors.whiteSmoke)
+                .foregroundColor(Colors.dimGray)
+                .cornerRadius(16)
+                
+                NavigationLink(
+                    isActive: $viewModel.authentificationWasSuccessful,
+                    destination: viewModel.destinationViewAfterAuthentification
+                ) { EmptyView().hidden() }
+            }
             .padding(.all, 16)
-            .background(Colors.whiteSmoke)
-            .foregroundColor(Colors.dimGray)
-            .cornerRadius(16)
+            .background(.white)
+            
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+    
         }
-        .padding(.all, 16)
-        .background(.white)
     }
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel<DestinationView>) {
         self.viewModel = viewModel
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel())
+        HomeView(viewModel: HomeViewModel<EmptyView>(destinationViewAfterAuthentification: { EmptyView() }))
     }
 }
 
